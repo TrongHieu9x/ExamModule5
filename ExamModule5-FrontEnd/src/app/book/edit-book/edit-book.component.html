@@ -1,0 +1,31 @@
+<div class="container">
+  <h1>Sửa sách</h1>
+  <div class="row">
+    <div class="col-12 text-center" style="margin-top: 20px">
+      <mat-card style="margin: 50px 0">
+        <form #form = "ngForm" (ngSubmit)="form.form.valid && ngSubmit()" novalidate>
+          <mat-error class="alert alert-primary">{{status}}</mat-error>
+          <mat-form-field style="width: 350px" appearance="outline">
+            <mat-label>Tên</mat-label>
+            <input matInput placeholder="title" name="title" [(ngModel)]="book.title" required>
+          </mat-form-field>
+          <br>
+          <mat-form-field style="width: 350px" appearance="outline">
+            <mat-label>Tác giả</mat-label>
+            <input matInput placeholder="author" name="author" [(ngModel)]="book.author" required>
+          </mat-form-field>
+          <br>
+          <mat-form-field style="width: 350px" appearance="outline">
+            <mat-label>Mổ tả</mat-label>
+            <input matInput placeholder="description" name="description" [(ngModel)]="book.description" required>
+          </mat-form-field>
+          <br>
+          <mat-dialog-actions class="text-center">
+            <button mat-button mat-dialog-close="" (click)="back()">Thoát</button>
+            <button mat-raised-button color="accent">Cập nhật</button>
+          </mat-dialog-actions>
+        </form>
+      </mat-card>
+    </div>
+  </div>
+</div>
